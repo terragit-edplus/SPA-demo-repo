@@ -43,12 +43,26 @@ jobs:
           role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
           aws-region:     ${{ secrets.AWS_REGION }}
 
-      - name: Upload index.html
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          
+      - name: Install dependencies
+        run: npm install
+
+        #step 4
+      - name: Create .env file
+        run: |
+          cat <<EOF > ./.env
+          ${{ secrets.ENV }}
+          EOF
+
+        #step 5
+      - name: Build project
+        run: npm run build
+
+        #step 7
+      - name: Upload dist to S3
         run: |
           aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}/ --delete
-
-      - name: Invalidate CloudFront Cache
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" \
-            --paths "/index.html" "/"
