@@ -1,43 +1,5 @@
-# 🚀 Project Name
-> _Short summary of the project purpose, scope, or problem it solves._
+# Vue 3 + Vite
 
----
+This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## 🧭 Overview
-> _Provide a high-level overview of the project._  
-
-
----
-
-## 🛠 Tech Stack
-> _List the main technologies, frameworks, and tools used._
-
-| Category | Technology |
-|-----------|-------------|
-| Language  |  |
-| Framework |  |
-| Database  |  |
-| CI/CD     |  |
-| Other     |  |
-
----
-
-## 🌐 Environments & URLs
-| Environment | URL / Access | Notes |
-|--------------|---------------|-------|
-| Development  |               |       |
-| Staging      |               |       |
-| Production   |               |       |
-
----
-
-## ⚙️ Installation Guidelines
-### Prerequisites
-> _Any required environment variables or credentials_
-
-### Installation
-```bash
-# Example
-git clone <repo-url>
-cd <project-folder>
-npm install
+Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
