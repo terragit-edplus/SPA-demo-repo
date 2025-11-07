@@ -43,13 +43,9 @@ jobs:
           role-to-assume: ${{ secrets.AWS_OIDC_ROLE_ARN }}
           aws-region:     ${{ secrets.AWS_REGION }}
 
-      - name: Verify file exists
-        run: test -f index.html || { echo "index.html not found at repo root"; exit 1; }
-
       - name: Upload index.html
         run: |
-          aws s3 cp * "s3://${{ secrets.S3_BUCKET_NAME }}/" \
-            --cache-control "no-cache"
+          aws s3 sync dist/ s3://${{ secrets.AWS_S3_BUCKET }}/ --delete
 
       - name: Invalidate CloudFront Cache
         run: |
