@@ -1,18 +1,11 @@
 {
-  "name": "spa-demo-repo",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "vue": "^3.5.22"
-  },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^6.0.1",
-    "vite": "^7.1.7"
+    "git-cz": "^4.9.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.4"
+  },
+  "scripts": {
+    "prepare": "git config core.hooksPath .husky && chmod -R +x .husky || true"
   }
 }
